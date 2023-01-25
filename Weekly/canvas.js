@@ -75,10 +75,9 @@ function fillTextEE() {
     ctx.textAlign = 'center';
 
     ctx.fillText(document.getElementById("txtName").value, canvas.width / 2, (canvas.height / 2) + 300);
-    ctx.fillText(document.getElementById("txtName1").value, canvas.width / 2, (canvas.height / 2) + 300);
-    ctx.fillText(document.getElementById("txtName2").value, canvas.width / 2, (canvas.height / 2) + 300);
-    ctx.fillText(document.getElementById("txtName3").value, canvas.width / 2, (canvas.height / 2) + 300);
-
+    ctx.fillText(document.getElementById("txtName1").value, canvas.width / 2, (canvas.height / 8) + 300);
+    ctx.fillText(document.getElementById("txtName2").value, canvas.width / 2, (canvas.height / 6) + 300);
+    ctx.fillText(document.getElementById("txtName3").value, canvas.width / 2, (canvas.height / 4) + 300);
 }
 
 
