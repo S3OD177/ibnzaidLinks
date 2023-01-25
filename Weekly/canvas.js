@@ -51,6 +51,7 @@ function AddUserPhoto() {
         img.setAttribute('crossorigin', 'anonymous');
         img.src = "TT.jpg";
         ctx.drawImage(img,0,0);
+        fillTextEE();
 
 
     };
