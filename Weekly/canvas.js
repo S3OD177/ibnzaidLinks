@@ -6,7 +6,7 @@ var x = 0;
 var y = 0;
 
 canvas.width = 1080;
-canvas.height = 1080;
+canvas.height = 1175;
 
 
 
