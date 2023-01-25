@@ -75,7 +75,7 @@ function fillTextEE() {
     ctx.fillStyle = '#4A5456';
     ctx.textAlign = 'center';
 
-    ctx.fillText(document.getElementById("txtName").value, canvas.width / 2, 700);
+    ctx.fillText(document.getElementById("txtName").value, canvas.width / 2, 710);
     ctx.fillText(document.getElementById("txtName1").value, canvas.width / 2, 780);
     ctx.fillText(document.getElementById("txtName2").value, canvas.width / 2, 820);
     ctx.fillText(document.getElementById("txtName3").value, canvas.width / 2, 860);
