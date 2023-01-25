@@ -5,8 +5,8 @@ var img = new Image();
 var x = 0;
 var y = 0;
 
-canvas.width = 1080;
-canvas.height = 1175;
+canvas.width = 1024;
+canvas.height = 1024;
 
 
 
@@ -75,6 +75,9 @@ function fillTextEE() {
     ctx.textAlign = 'center';
 
     ctx.fillText(document.getElementById("txtName").value, canvas.width / 2, (canvas.height / 2) + 300);
+    ctx.fillText(document.getElementById("txtName1").value, canvas.width / 2, (canvas.height / 2) + 300);
+    ctx.fillText(document.getElementById("txtName2").value, canvas.width / 2, (canvas.height / 2) + 300);
+    ctx.fillText(document.getElementById("txtName3").value, canvas.width / 2, (canvas.height / 2) + 300);
 
 }
 
