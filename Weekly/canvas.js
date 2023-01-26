@@ -2,29 +2,11 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 var img = new Image();
-var x = 0;
-var y = 0;
+var x = 132;
+var y = 235;
 
 canvas.width = 1024;
 canvas.height = 1024;
-
-
-
-
-// function BackgorundEE() {
-//     var fileInput = document.getElementById("BackgorundEE");
-//     img.src = URL.createObjectURL(fileInput.files[0]);
-
-//     img.onload = function () {
-//         // clear the canvas
-//         ctx.clearRect(0, 0, canvas.width, canvas.height);
-//         // draw the image on the canvas, scaling it to fit
-//         ctx.drawImage(img, 0, 0, img.width, img.height, x, y, 1080, 1080);
-
-//         ctx.drawImage(canvas1, 0, 0);
-
-//     };
-// }
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -36,21 +18,20 @@ function AddUserPhoto() {
 
 
     img.onload = function () {
-        ctx.drawImage(img, 0, 0, img.width, img.height, 132, 235, 300, 300);
+        ctx.drawImage(img, 0, 0, img.width, img.height, x, y, 300, 300);
         
         // draw our circle mask
         ctx.globalCompositeOperation = 'destination-in';
 
         ctx.beginPath();
         ctx.arc(
-            260, // x
-            379, // y
+            x + 150, // x
+            y + 150, // y
             150, // radius
             0, // start angle
             2 * Math.PI // end angle
         );
         ctx.fill();
-        // ctx.drawImage(img, 0 ,0);
 
         ctx.globalCompositeOperation = 'destination-over';
 
@@ -68,7 +49,7 @@ function AddUserPhoto() {
 
 function fixOnload() {
     img.onload = function () {
-        alert("Here");
+        // alert("Here");
     }
 }
 
