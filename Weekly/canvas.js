@@ -31,15 +31,15 @@ function AddUserPhoto() {
     img.src = URL.createObjectURL(fileInput.files[0]);
 
     img.onload = function () {
-        ctx.drawImage(img, 0, 0, img.width, img.height, 75, 227, 300, 300);
+        ctx.drawImage(img, 0, 0, img.width, img.height, 132, 235, 300, 300);
         
         // draw our circle mask
         ctx.globalCompositeOperation = 'destination-in';
 
         ctx.beginPath();
         ctx.arc(
-            224, // x
-            379, // y
+            260, // x
+            370, // y
             150, // radius
             0, // start angle
             2 * Math.PI // end angle
