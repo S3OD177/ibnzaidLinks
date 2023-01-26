@@ -55,11 +55,15 @@ function AddUserPhoto() {
 
         alert("Press OK");
 
+    };
+    img.src = "TT.jpg";
+    
+    img.onload = function () {
+        alert("Press EE ");
         ctx.globalCompositeOperation = 'destination-over';
+        ctx.drawImage(img,0,0);
     };
 
-    img.src = "TT.jpg";
-    ctx.drawImage(img,0,0);
     ctx.globalCompositeOperation = 'source-over';
     fillTextEE();
 
