@@ -37,7 +37,6 @@ function AddUserPhoto() {
     alert("Here");
 
     img.onload = function () {
-        if (img.src == "TT.jpg") {return;}
         ctx.drawImage(img, 0, 0, img.width, img.height, 132, 235, 300, 300);
         
         // draw our circle mask
