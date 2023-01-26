@@ -2,8 +2,15 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 var img = new Image();
-var x = 128;
-var y = 235;
+
+var EE = new Image();
+EE.src = "TT.jpg";
+
+// Start Print from Left top
+var x = 130; 
+var y = 234;
+// size 
+var size = 258;
 
 canvas.width = 1024;
 canvas.height = 1024;
@@ -18,16 +25,17 @@ function AddUserPhoto() {
 
 
     img.onload = function () {
-        ctx.drawImage(img, 0, 0, img.width, img.height, x, y, 255, 255);
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.drawImage(img, 0, 0, img.width, img.height, x, y, size, size);
         
         // draw our circle mask
         ctx.globalCompositeOperation = 'destination-in';
 
         ctx.beginPath();
         ctx.arc(
-            x + 150, // x
-            y + 150, // y
-            255 / 2, // radius
+            x + (size/2), // x
+            y + (size/2), // y
+            size / 2, // radius
             0, // start angle
             2 * Math.PI // end angle
         );
@@ -35,8 +43,9 @@ function AddUserPhoto() {
 
         ctx.globalCompositeOperation = 'destination-over';
 
-        img.src = "TT.jpg";
-        ctx.drawImage(img,0,0);
+        ctx.drawImage(EE,0,0);
+        // ctx.drawImage(EE, 0, 0, img.width, img.height, 0, 0, 1024, 1024);
+
         ctx.globalCompositeOperation = 'source-over';
         fillTextEE();
 
@@ -49,7 +58,7 @@ function AddUserPhoto() {
 
 function fixOnload() {
     img.onload = function () {
-        alert("Here");
+        // alert("Here");
         ctx.globalCompositeOperation = 'source-over';
     }
 }
