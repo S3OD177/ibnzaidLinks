@@ -34,8 +34,7 @@ function AddUserPhoto() {
     var fileInput = document.getElementById("AddUserPhoto");
     img.src = URL.createObjectURL(fileInput.files[0]);
 
-    alert("Here");
-
+    
     img.onload = function () {
         ctx.drawImage(img, 0, 0, img.width, img.height, 132, 235, 300, 300);
         
@@ -52,8 +51,6 @@ function AddUserPhoto() {
         );
         ctx.fill();
         // ctx.drawImage(img, 0 ,0);
-
-        alert("Press OK");
 
         ctx.globalCompositeOperation = 'destination-over';
 
