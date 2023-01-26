@@ -38,7 +38,7 @@ function AddUserPhoto() {
 
         ctx.beginPath();
         ctx.arc(
-            224, // x
+            260, // x
             379, // y
             150, // radius
             0, // start angle
@@ -46,6 +46,8 @@ function AddUserPhoto() {
         );
         ctx.fill();
         // ctx.drawImage(img, 0 ,0);
+
+        await sleep(2000);
 
         ctx.globalCompositeOperation = 'destination-over';
         img.setAttribute('crossorigin', 'anonymous');
