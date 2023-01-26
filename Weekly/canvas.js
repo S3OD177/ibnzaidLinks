@@ -38,8 +38,8 @@ function AddUserPhoto() {
 
         ctx.beginPath();
         ctx.arc(
-            260, // x
-            370, // y
+            224, // x
+            379, // y
             150, // radius
             0, // start angle
             2 * Math.PI // end angle
