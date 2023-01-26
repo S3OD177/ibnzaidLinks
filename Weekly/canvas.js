@@ -68,7 +68,7 @@ function AddUserPhoto() {
 
 function fixOnload() {
     img.onload = function () {
-        // alert("Here");
+        alert("Here");
     }
 }
 
