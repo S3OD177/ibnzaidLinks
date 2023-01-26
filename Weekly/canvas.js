@@ -36,25 +36,29 @@ function AddUserPhoto() {
 
     alert("Here");
 
-    ctx.drawImage(img, 0, 0, img.width, img.height, 132, 235, 300, 300);
+    img.onload = function () {
+        if (img.src == "TT.jpg") {break;}
+        ctx.drawImage(img, 0, 0, img.width, img.height, 132, 235, 300, 300);
         
-    // draw our circle mask
-    ctx.globalCompositeOperation = 'destination-in';
+        // draw our circle mask
+        ctx.globalCompositeOperation = 'destination-in';
 
-    ctx.beginPath();
-    ctx.arc(
-        260, // x
-        379, // y
-        150, // radius
-        0, // start angle
-        2 * Math.PI // end angle
-    );
-    ctx.fill();
-    // ctx.drawImage(img, 0 ,0);
+        ctx.beginPath();
+        ctx.arc(
+            260, // x
+            379, // y
+            150, // radius
+            0, // start angle
+            2 * Math.PI // end angle
+        );
+        ctx.fill();
+        // ctx.drawImage(img, 0 ,0);
 
-    alert("Press OK");
+        alert("Press OK");
 
-    ctx.globalCompositeOperation = 'destination-over';
+        ctx.globalCompositeOperation = 'destination-over';
+    };
+
     img.src = "TT.jpg";
     ctx.drawImage(img,0,0);
     ctx.globalCompositeOperation = 'source-over';
