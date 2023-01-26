@@ -66,7 +66,7 @@ function AddUserPhoto() {
 
 function fixOnload() {
     img.onload = function () {
-        alert("Please Here")
+        alert("Please Here");
     }
 }
 
