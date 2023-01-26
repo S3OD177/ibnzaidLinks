@@ -11,20 +11,20 @@ canvas.height = 1024;
 
 
 
-function BackgorundEE() {
-    var fileInput = document.getElementById("BackgorundEE");
-    img.src = URL.createObjectURL(fileInput.files[0]);
+// function BackgorundEE() {
+//     var fileInput = document.getElementById("BackgorundEE");
+//     img.src = URL.createObjectURL(fileInput.files[0]);
 
-    img.onload = function () {
-        // clear the canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        // draw the image on the canvas, scaling it to fit
-        ctx.drawImage(img, 0, 0, img.width, img.height, x, y, 1080, 1080);
+//     img.onload = function () {
+//         // clear the canvas
+//         ctx.clearRect(0, 0, canvas.width, canvas.height);
+//         // draw the image on the canvas, scaling it to fit
+//         ctx.drawImage(img, 0, 0, img.width, img.height, x, y, 1080, 1080);
 
-        ctx.drawImage(canvas1, 0, 0);
+//         ctx.drawImage(canvas1, 0, 0);
 
-    };
-}
+//     };
+// }
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -60,13 +60,15 @@ function AddUserPhoto() {
         fillTextEE();
 
         ctx.globalCompositeOperation = 'destination-over';
-        fixOnload();
+
+
+        fixOnload(); // Don't Remove this -- EE
     };
 }
 
 function fixOnload() {
     img.onload = function () {
-        alert("Please Here");
+        // alert("Here");
     }
 }
 
