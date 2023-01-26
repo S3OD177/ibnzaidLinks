@@ -26,6 +26,10 @@ function BackgorundEE() {
     };
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function AddUserPhoto() {
     var fileInput = document.getElementById("AddUserPhoto");
     img.src = URL.createObjectURL(fileInput.files[0]);
