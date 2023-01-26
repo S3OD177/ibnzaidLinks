@@ -34,7 +34,7 @@ function AddUserPhoto() {
     var fileInput = document.getElementById("AddUserPhoto");
     img.src = URL.createObjectURL(fileInput.files[0]);
 
-    
+
     img.onload = function () {
         ctx.drawImage(img, 0, 0, img.width, img.height, 132, 235, 300, 300);
         
@@ -60,9 +60,14 @@ function AddUserPhoto() {
         fillTextEE();
 
         ctx.globalCompositeOperation = 'destination-over';
-
-
+        fixOnload();
     };
+}
+
+function fixOnload() {
+    img.onload = function () {
+        alert("Please Here")
+    }
 }
 
 function downloadEE() {
