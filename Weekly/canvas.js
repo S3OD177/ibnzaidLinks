@@ -2,7 +2,7 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 var img = new Image();
-var x = 132;
+var x = 128;
 var y = 235;
 
 canvas.width = 1024;
@@ -18,7 +18,7 @@ function AddUserPhoto() {
 
 
     img.onload = function () {
-        ctx.drawImage(img, 0, 0, img.width, img.height, x, y, 300, 300);
+        ctx.drawImage(img, 0, 0, img.width, img.height, x, y, 255, 255);
         
         // draw our circle mask
         ctx.globalCompositeOperation = 'destination-in';
@@ -27,7 +27,7 @@ function AddUserPhoto() {
         ctx.arc(
             x + 150, // x
             y + 150, // y
-            150, // radius
+            255 / 2, // radius
             0, // start angle
             2 * Math.PI // end angle
         );
@@ -49,7 +49,8 @@ function AddUserPhoto() {
 
 function fixOnload() {
     img.onload = function () {
-        // alert("Here");
+        alert("Here");
+        ctx.globalCompositeOperation = 'source-over';
     }
 }
 
