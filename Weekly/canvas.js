@@ -76,7 +76,7 @@ function downloadEE() {
 
 
 function fillTextEE() {
-    ctx.font = '35px Almarai';
+    ctx.font = '35px GE_Hili_Book.otf';
     ctx.fillStyle = '#4A5456';
     ctx.textAlign = 'center';
 
