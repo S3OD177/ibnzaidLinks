@@ -7,7 +7,7 @@ var EE = new Image();
 EE.src = "TT.jpg";
 
 // Start Print from Left top
-var x = 90; 
+var x = 50; 
 var y = 241;
 // size 
 var size = 258;
