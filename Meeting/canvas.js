@@ -7,8 +7,8 @@ var EE = new Image();
 EE.src = "TT.jpg";
 
 // Start Print from Left top
-var x = 130; 
-var y = 234;
+var x = 90; 
+var y = 240;
 // size 
 var size = 258;
 
@@ -82,8 +82,7 @@ function fillTextEE() {
 
     ctx.fillText(document.getElementById("txtName").value, canvas.width / 2, 710);
     ctx.fillText(document.getElementById("txtName1").value, canvas.width / 2, 780);
-    ctx.fillText(document.getElementById("txtName2").value, canvas.width / 2, 820);
-    ctx.fillText(document.getElementById("txtName3").value, canvas.width / 2, 860);
+
 }
 
 
