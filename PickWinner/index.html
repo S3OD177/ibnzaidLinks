@@ -13,6 +13,17 @@
             font-family: sans-serif;
         }
 
+        textarea {
+            height: 150px;
+            padding: 22px 20px;
+            border: 3px solid #5e5e5e;
+            border-radius: 4px;
+            background-color: #222;
+            font-size: 16px;
+            resize: none;
+            color: white;
+          }
+
         button {
             background-color: #1abc9c;
             color: #fff;
@@ -77,9 +88,12 @@
     <div id="result"></div>
     <div class="form-container">
         <label for="new-name">Add a new player:</label>
-        <input type="text" id="new-name" placeholder="Enter name here...">
+        <br>
+        <textarea type="text" id="new-name" placeholder="Enter name here..."></textarea>
+        <!-- <input type="text" id="new-name" placeholder="Enter name here...">
+        <input type="text" id="new-name" placeholder="Enter name here..."> -->
         <button id="add-name">Add</button>
-        <div class="names">
+        <div class="names" id="names-list" style="display: none;">
             <h2>List of Names:</h2>
             <ul id="name-list"></ul>
         </div>
@@ -87,10 +101,13 @@
 
     <script>
         // List of names to choose from
-        let names = ['Mohmmed','saud','ahmed'];
+        let names = [];
 
         // Function to pick a random name and display the result
         function pickWinner() {
+            if (names.length == 0) {
+                return
+            }
             var subName = [...names];
 
             const result = document.getElementById('result');
@@ -117,12 +134,20 @@
                         result.classList.remove('animated', 'bounceIn');
                     }, 1000);
                 }
-            }, 200);
+            }, 300);
         }
 
 
         // Function to display the list of names
         function displayNames() {
+            if (names.length != 0) {
+                var namesDiv = document.getElementById("names-list");
+                namesDiv.style.display = "block";
+            } else {
+                var namesDiv = document.getElementById("names-list");
+                namesDiv.style.display = "none";
+            }
+
             var list = document.getElementById('name-list');
             list.innerHTML = '';
             for (var i = 0; i < names.length; i++) {
@@ -135,7 +160,7 @@
         // Function to add a new player to the list
         function addPlayer() {
             const newPlayerInput = document.getElementById('new-name');
-            const newPlayerNames = newPlayerInput.value.split(',').map(name => name.trim());
+            const newPlayerNames = newPlayerInput.value.split('\n').map(name => name.trim());
             for (const newPlayerName of newPlayerNames) {
                 if (newPlayerName !== '') {
                     // check if the name already exists
@@ -160,8 +185,8 @@
         addPlayerButton.addEventListener('click', addPlayer);
 
         // Display the initial list of names
-        displayNames();
         document.getElementsByTagName("h1")[0].style.fontSize = "6vw";
+        displayNames();
     </script>
 </body>
 
