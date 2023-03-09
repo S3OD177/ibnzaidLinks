@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pick a Winner</title>
+    <style>
+        body {
+            font-family: system-ui;
+            color: white;
+            text-align: center;
+            background-color: #222;
+            color: #fff;
+            font-family: sans-serif;
+        }
+
+        button {
+            background-color: #1abc9c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: pulse 1s infinite;
+        }
+
+        .names {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .names li {
+            margin-bottom: 5px;
+        }
+
+        .form-container {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container label {
+            font-size: 24px;
+        }
+
+        .form-container input[type=text] {
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 10px;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        .form-container button {
+            background-color: #1abc9c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            animation: pulse 1s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pick a Winner</h1>
+    <p>Click the button below to pick a random winner from the list:</p>
+    <button id="pick-winner">Pick a Winner</button>
+    <div id="result"></div>
+    <div class="form-container">
+        <label for="new-name">Add a new player:</label>
+        <input type="text" id="new-name" placeholder="Enter name here...">
+        <button id="add-name">Add</button>
+        <div class="names">
+            <h2>List of Names:</h2>
+            <ul id="name-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        // List of names to choose from
+        let names = ['Mohmmed','saud','ahmed'];
+
+        // Function to pick a random name and display the result
+        function pickWinner() {
+            var subName = [...names];
+
+            const result = document.getElementById('result');
+            let i = subName.length;
+            const interval = setInterval(() => {
+                const randomIndex = Math.floor(Math.random() * subName.length);
+                const playerName = subName[randomIndex];
+                console.log(playerName);
+                result.innerHTML = `
+            <h2>Rolling...</h2>
+            <p>${playerName}</p>
+        `;
+                subName.splice(randomIndex, 1);
+                i = subName.length;
+                console.log(i);
+                if (i === 0) {
+                    clearInterval(interval);
+                    result.innerHTML = `
+                <h2>The winner is:</h2>
+                <p>${playerName}</p>
+            `;
+                    result.classList.add('animated', 'bounceIn');
+                    setTimeout(() => {
+                        result.classList.remove('animated', 'bounceIn');
+                    }, 1000);
+                }
+            }, 200);
+        }
+
+
+        // Function to display the list of names
+        function displayNames() {
+            var list = document.getElementById('name-list');
+            list.innerHTML = '';
+            for (var i = 0; i < names.length; i++) {
+                var li = document.createElement('li');
+                li.innerText = names[i];
+                list.appendChild(li);
+            }
+        }
+
+        // Function to add a new player to the list
+        function addPlayer() {
+            const newPlayerInput = document.getElementById('new-name');
+            const newPlayerNames = newPlayerInput.value.split(',').map(name => name.trim());
+            for (const newPlayerName of newPlayerNames) {
+                if (newPlayerName !== '') {
+                    // check if the name already exists
+                    if (!names.includes(newPlayerName)) {
+                        names.push(newPlayerName);
+                        displayNames();
+                    } else {
+                        console.log("Dup name: " + newPlayerName);
+                    }
+                }
+            }
+            newPlayerInput.value = ''; // clear the input field at the end
+        }
+        
+
+        // Add click event listener to button
+        const button = document.getElementById('pick-winner');
+        button.addEventListener('click', pickWinner);
+
+        // Add click event listener to add button
+        const addPlayerButton = document.getElementById('add-name');
+        addPlayerButton.addEventListener('click', addPlayer);
+
+        // Display the initial list of names
+        displayNames();
+        document.getElementsByTagName("h1")[0].style.fontSize = "6vw";
+    </script>
+</body>
+
+</html>
