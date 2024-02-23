@@ -1,0 +1,85 @@
+body {
+    font-family: system-ui;
+    color: white;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+textarea {
+    height: 150px;
+    padding: 22px 20px;
+    border: 3px solid #5e5e5e;
+    border-radius: 4px;
+    background-color: #222;
+    font-size: 16px;
+    resize: none;
+    color: white;
+  }
+
+button {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+
+addBtn {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+
+.names {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.names li {
+    margin-bottom: 5px;
+}
+
+.form-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container label {
+    font-size: 24px;
+}
+
+.form-container input[type=text] {
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    width: 300px;
+    max-width: 100%;
+}
+
+.form-container button {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    animation: pulse 1s infinite;
+}
