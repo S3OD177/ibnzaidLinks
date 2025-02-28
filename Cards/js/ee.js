@@ -35,7 +35,7 @@ function showOccasion() {
         <div id="0" class="card mb-3" data-img-link="https://saud.imgix.net/cardsImg/ram1.jpeg" data-title="رمضان">
             <a href="#" onclick="selectOccasion(1)" class="text-decoration-none text-dark">
                 <div class="card-body d-flex justify-content-center align-items-center py-3">
-                    <h5 class="card-title m-0">رمضان</h5>
+                    <h5 class="card-title m-0">الإجتماع الاسبوعي</h5>
                 </div>
             </a>
         </div>
@@ -43,7 +43,7 @@ function showOccasion() {
         <div id="1" class="card mb-3" data-img-link="https://saud.imgix.net/cardsImg/eidf1.jpeg" data-title="عيد الفطر">
             <a href="#" onclick="selectOccasion(2)" class="text-decoration-none text-dark">
                 <div class="card-body d-flex justify-content-center align-items-center py-3">
-                    <h5 class="card-title m-0">عيد الفطر</h5>
+                    <h5 class="card-title m-0">تعزية</h5>
                 </div>
             </a>
         </div>
